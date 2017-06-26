@@ -1,0 +1,3 @@
+- very lightweight, just display data to the client and pass request to the command service
+- its, just a user interface, we dont want to put any business logic into our view
+- communicates with command and query service via REST
