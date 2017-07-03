@@ -10,6 +10,7 @@ buildscript {
 	}
 }
 
+apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -21,11 +22,11 @@ repositories {
 	mavenCentral()
 }
 
+plugins {
+   	id 'net.ltgt.apt' version '0.9'
+}
+
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.boot:spring-boot-starter-aop')
-	compile('org.springframework.boot:spring-boot-starter-cache')
-	compile('org.springframework.kafka:spring-kafka')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
