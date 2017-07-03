@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Registration Form</title>
@@ -9,22 +9,28 @@
 
 <form class="login-form" method="post">
     <div class="field">
-        <input type="text" value="" placeholder="username" name="username"/>
+        <input type="text" placeholder="username" name="userName" autocomplete="off" th:value="${data.userName}"/>
+        <span th:if="${#fields.hasErrors('data.userName')}" th:errors="${data.userName}"></span>
     </div>
 
     <div class="field">
-        <input type="password" value="" placeholder="password" name="password"/>
+        <input type="email" placeholder="email address" name="emailAddress" autocomplete="off" th:value="${data.emailAddress}"/>
+        <span th:if="${#fields.hasErrors('data.emailAddress')}" th:errors="${data.emailAddress}"></span>
+    </div>
+
+    <div class="field">
+        <input type="password" placeholder="password" name="password" autocomplete="off"/>
+        <span th:if="${#fields.hasErrors('data.password')}" th:errors="${data.password}"></span>
     </div>
 
     <div class="field with-btn">
-        <input type="password" value="" placeholder="password again" name="repassword"/>
+        <input type="password" placeholder="password again" name="rePassword" autocomplete="off"/>
+        <span th:if="${#fields.hasErrors('data.samePassword')}" th:errors="${data.samePassword}"></span>
     </div>
 
     <button>Register</button>
 
-    <p class="message">
-
-    </p>
+    <p class="message"></p>
 </form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
