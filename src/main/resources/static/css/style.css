@@ -79,3 +79,7 @@ a {
     color: #ddd;
     border-bottom-color: #ddd;
 }
+.field span {
+    color: white;
+    display: block;
+}
